@@ -6,7 +6,7 @@ generating fun and unique name.
 ## File structure
 
 - `data`: the folder that contains relevant dataset for name generation
-- `scripts`: The folder that contains scripts using `microscripts` and provides some UX to generating names
+- `src`: The source folder 
 
 ## Tools & technology
 
