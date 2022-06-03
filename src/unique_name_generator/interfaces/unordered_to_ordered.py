@@ -9,7 +9,7 @@ def to_ordered(unordered: Counter[str], randomize=True)->List[str]:
     :param unordered the unordered output we want to order
     :return ordered output under the form of list of strings
     """
-    ordered = unordered.elements()
+    ordered = list(unordered.elements())
     if randomize:
         random.shuffle(ordered)
 

@@ -1,5 +1,5 @@
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Any, List, Set, Dict
 
 
@@ -14,12 +14,12 @@ class Domain:
     """
     Stores the data used by the generator
     """
-    data_tag: List[Any]
-    symbols: List[Symbol]
+    data_tag: List[Any] = field(default_factory=list)
+    symbols: List[Symbol] = field(default_factory=list)
 
-    m_tag_dict: None=None
+    m_tag_dict: None = None
 
-    def tag_dict(self)->Dict[str, Set[Symbol]]:
+    def tag_dict(self) -> Dict[str, Set[Symbol]]:
         """
         Returns the mapping from tag to the symbols
         """
@@ -32,4 +32,4 @@ class Domain:
                         tagd[kw] = set()
                     tagd[kw].add(sym)
             self.m_tag_dict = tagd
-        return self.m_tag_dict    
+        return self.m_tag_dict
